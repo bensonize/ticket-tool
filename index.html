@@ -25,8 +25,8 @@
   </div>
 
   <div>
-    <button onclick="copyText('card8')" style="margin-bottom: 20px;">複製信用卡號8碼</button>
-    <input id="card8" value="12345678" readonly>
+    <button onclick="copyText('card6')" style="margin-bottom: 20px;">複製信用卡號6碼</button>
+    <input id="card6" value="123456" readonly>
   </div>
 
   <div>
@@ -46,7 +46,7 @@
 
     function toggleEdit() {
       isEditable = !isEditable;
-      const fields = ['name', 'phone', 'email', 'card8', 'card16'];
+      const fields = ['name', 'phone', 'email', 'card6', 'card16'];
       fields.forEach(id => {
         document.getElementById(id).readOnly = !isEditable;
       });
