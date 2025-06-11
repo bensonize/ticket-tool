@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>搶票順利</title>
+</head>
+<body>
+  <h2>按一下就複製 再Ctrl+V貼上</h2>
+
+<button onclick="toggleEdit()" id="editBtn" style="margin-bottom: 40px;">啟用編輯模式</button>
+
+  <div>
+    <button onclick="copyText('name')" style="margin-bottom: 20px;">複製姓名</button>
+    <input id="name" value="吃飽太閒" readonly>
+  </div>
+
+  <div>
+    <button onclick="copyText('phone')" style="margin-bottom: 20px;">複製電話</button>
+    <input id="phone" value="0912345678" readonly>
+  </div>
+
+  <div>
+    <button onclick="copyText('email')" style="margin-bottom: 20px;">複製信箱</button>
+    <input id="email" value="123@gmail.com" readonly>
+  </div>
+
+  <div>
+    <button onclick="copyText('card8')" style="margin-bottom: 20px;">複製信用卡號8碼</button>
+    <input id="card8" value="12345678" readonly>
+  </div>
+
+  <div>
+    <button onclick="copyText('card16')" style="margin-bottom: 20px;">複製信用卡號16碼</button>
+    <input id="card16" value="1234567812345678" readonly>
+  </div>
+
+  <script>
+    function copyText(id) {
+      const input = document.getElementById(id);
+      input.select();
+      input.setSelectionRange(0, 99999); // for mobile
+      document.execCommand("copy");
+    }
+
+    let isEditable = false;
+
+    function toggleEdit() {
+      isEditable = !isEditable;
+      const fields = ['name', 'phone', 'email', 'card8', 'card16'];
+      fields.forEach(id => {
+        document.getElementById(id).readOnly = !isEditable;
+      });
+
+      document.getElementById("editBtn").innerText = isEditable ? "鎖定資料" : "啟用編輯模式";
+    }
+  </script>
+</body>
+
+</html>
