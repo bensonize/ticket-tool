@@ -9,6 +9,10 @@
 
   <button onclick="toggleEdit()" id="editBtn">啟用編輯模式</button>
 
+
+
+
+  
   <div>
     <button onclick="copyText('name')">複製姓名</button>
     <input id="name" value="吃飽太閒" readonly>
@@ -55,29 +59,5 @@
     }
   </script>
 </body>
-
-<div style="margin-top: 30px;">
-  <h3>現在時間：</h3>
-  <div id="clock" style="font-size: 1.5em; font-weight: bold;"></div>
-</div>
-
-<script>
-  function updateClock() {
-    const now = new Date();
-    const formatted = now.toLocaleString('zh-TW', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: false
-    });
-    document.getElementById("clock").textContent = formatted;
-  }
-
-  setInterval(updateClock, 1000);
-  updateClock(); // 初始化顯示一次
-</script>
 
 </html>
